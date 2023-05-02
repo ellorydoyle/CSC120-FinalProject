@@ -135,29 +135,13 @@ public class Main {
             System.out.println(firstName.toUpperCase() + ": No, it's all right! I actually was planning to try out for the football team too, so I might as well meet my prospective teammates.\n");
             System.out.println("You make a quick turn and wave back towards Ms. Pillsbury. She was nice, but you were ready to meet some actual people your age.\nUpon opening the door to the locker room, you are greeted by a wall of Jocks, staring at you with crossed arms.\n");
             Random rand = new Random();
-            String randomName = McKinleyHigh.jocks.get(rand.nextInt(McKinleyHigh.jocks.size())).fullName;
-            int randInt = 1;
-            while (randInt == 1){
-                if (randomName.equals("Noah Puckerman")){
-                    randInt = 1;
-                    randomName = McKinleyHigh.jocks.get(rand.nextInt(McKinleyHigh.jocks.size())).fullName;
-                }
-                else if (randomName.equals("Finn Hudson")){
-                    randInt = 1;
-                    randomName = McKinleyHigh.jocks.get(rand.nextInt(McKinleyHigh.jocks.size())).fullName;
-                }
-                else if (randomName.equals("Sam Evans")){
-                    randInt = 1;
-                    randomName = McKinleyHigh.jocks.get(rand.nextInt(McKinleyHigh.jocks.size())).fullName;
-                }
-                else if (randomName.equals(fullName)){
-                    randInt = 1;
-                    randomName = McKinleyHigh.jocks.get(rand.nextInt(McKinleyHigh.jocks.size())).fullName;
-                }
-                else{
-                    randInt = 0;
-                }
+            Jock randomPerson = McKinleyHigh.jocks.get(rand.nextInt(McKinleyHigh.jocks.size()));
+            Boolean randomBool = randomPerson.gleeClub;
+            while (randomBool == true){
+                randomPerson = McKinleyHigh.jocks.get(rand.nextInt(McKinleyHigh.jocks.size()));
+                randomBool = randomPerson.gleeClub;
             }
+            String randomName = randomPerson.fullName;
             System.out.println(green + randomName + ": How do you expect us to be" + reset);
         }
     }

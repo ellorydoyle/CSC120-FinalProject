@@ -49,7 +49,7 @@ public class McKinleyHigh {
         roster.addNormie(new Normie("Tina", "Cohen-Chang", 8, true));
         roster.addCheerio(new Cheerio("Brittany", "Pierce", 7, true));
         roster.addNormie(new Normie("Blaine", "Anderson", 8, true));
-        roster.addNormie(new Normie("Mike", "Chang", 7, true));
+        roster.addJock(new Jock("Mike", "Chang", 7, true));
         roster.addJock(new Jock("Sam", "Evans", 8, true));
         roster.addAdult(new Adult("Will", "Schuester", 10, true));
         roster.addAdult(new Adult("Sue", "Sylvester", 1, false));
