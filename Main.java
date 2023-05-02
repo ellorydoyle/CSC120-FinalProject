@@ -128,11 +128,11 @@ public class Main {
         }
         else if (group.equals("b")){
             System.out.println("As Ms. Pillsbury walks you out of the office, you feel a sudden mood shift. Your anxiety from earlier melts away when you see a sign-up sheet on the corkboard as you pass through the hallway.\n");
-            System.out.println(firstName + ": The Glee Club?");
+            System.out.println(firstName.toUpperCase() + ": The Glee Club?");
             System.out.println(blue + "MS. PILLSBURY: Oh! Do you think you would want to join? I told Will I'd bring him students that show interest!\n" + reset);
             System.out.println("You pause for a second, but nod affirmative. Behind you, the snickers of a gaggle of football players can be heard through the door to the locker room.\n");
             System.out.println(blue + "MS. PILLSBURY: Don't mind them, the football team can be full of real bullies, but you don't have to talk with them if you don't want to." + reset);
-            System.out.println(firstName + ": No, it's all right! I actually was planning to try out for the football team too, so I might as well meet my prospective teammates.\n");
+            System.out.println(firstName.toUpperCase() + ": No, it's all right! I actually was planning to try out for the football team too, so I might as well meet my prospective teammates.\n");
             System.out.println("You make a quick turn and wave back towards Ms. Pillsbury. She was nice, but you were ready to meet some actual people your age.\nUpon opening the door to the locker room, you are greeted by a wall of Jocks, staring at you with crossed arms.\n");
             Random rand = new Random();
             String randomName = McKinleyHigh.jocks.get(rand.nextInt(McKinleyHigh.jocks.size())).fullName;
