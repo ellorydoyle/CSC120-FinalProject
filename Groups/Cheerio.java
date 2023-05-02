@@ -2,14 +2,16 @@ package Groups;
 
 public class Cheerio {
       
-    String firstName;
-    String lastName;
+    public String firstName;
+    public String lastName;
+    public String fullName;
     int wantToWin;
-    boolean gleeClub;
+    public boolean gleeClub;
 
     public Cheerio (String firstName, String lastName, int wantToWin, boolean gleeClub){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.fullName = firstName + " " + lastName;
         this.wantToWin = 2;
         this.gleeClub = false;
     }

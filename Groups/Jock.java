@@ -2,15 +2,17 @@ package Groups;
 
 public class Jock {
       
-    String firstName;
-    String lastName;
-    String nickName;
+    public String firstName;
+    public String lastName;
+    public String nickName;
+    public String fullName;
     int wantToWin;
-    boolean gleeClub;
+    public boolean gleeClub;
 
     public Jock (String firstName, String lastName, int wantToWin, boolean gleeClub){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.fullName = firstName + " " + lastName;
         this.wantToWin = 4;
         this.gleeClub = false;
     }

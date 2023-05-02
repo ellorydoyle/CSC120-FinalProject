@@ -7,10 +7,10 @@ import Groups.Adult;
 
 public class McKinleyHigh {
 
-    ArrayList<Cheerio> cheerios;
-    ArrayList<Jock> jocks;
-    ArrayList<Normie> normies;
-    ArrayList<Adult> adults;
+    static ArrayList<Cheerio> cheerios;
+    static ArrayList<Jock> jocks;
+    static ArrayList<Normie> normies;
+    static ArrayList<Adult> adults;
 
 
     public McKinleyHigh() {
@@ -66,5 +66,14 @@ public class McKinleyHigh {
         roster.addJock(new Jock("Jock", "3", 4, false));
         roster.addJock(new Jock("Jock", "4", 4, false));
         roster.addJock(new Jock("Jock", "5", 4, false));
+        if (Main.group.equals("a")){
+            roster.addCheerio(new Cheerio(Main.firstName, Main.lastName, 2, true));
+        }
+        if (Main.group.equals("b")){
+            roster.addJock(new Jock(Main.firstName, Main.lastName, 4, true));
+        }
+        if (Main.group.equals("c")){
+            roster.addNormie(new Normie(Main.firstName, Main.lastName, 5, true));
+        }
     }
 }
