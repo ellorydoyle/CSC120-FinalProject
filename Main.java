@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,6 +17,7 @@ public class Main {
     static int wantToWin;
     static String playedBefore;
     static String sueAnswer;
+    static String jockAnswer;
     static Random random;
     static Scanner keyboard;
     public static final String blue = "\u001B[34m";
@@ -34,47 +36,57 @@ public class Main {
         Main.playedBefore = playedBefore;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException{
         System.out.println(reset);
         System.out.print("\033[H\033[2J");
         System.out.flush();
         Main.introduction();
     }
 
-    public static void introduction (){
+    public static void introduction () throws InterruptedException{
         System.out.print("\033[H\033[2J");
         System.out.flush();
+        Thread.sleep(1000);
         System.out.print("Welcome to GLEE: The Road to Sectionals!\n\nWhat is your first name?\n> ");
         keyboard = new Scanner(System.in);
         firstName = keyboard.nextLine();
+        Thread.sleep(1000);
         System.out.print("\nWhat is your last name?\n> ");
         lastName = keyboard.nextLine();
+        Thread.sleep(1000);
         System.out.print("\nAmazing! Now what group in McKinley High would you be a part of? There are:\na. Cheerios\nb. Jocks\nc. Normies\n> ");
         fullName = firstName + " " + lastName;
         group = keyboard.nextLine().toLowerCase();
+        Thread.sleep(1000);
         McKinleyHigh.main();
         if (group.equals("a")){
             System.out.println("\nWelcome to McKinley High! Your name is " + fullName + " and you decided to join the Cheerios. This means that in a count from 1 to 10, your current desire for the Glee Club to survive is at a 2.");
             wantToWin = 2;
-            System.out.println("Your stats will update in real time based on your interactions, so watch out for how your choices affect the game!");
+            Thread.sleep(1000);
+            System.out.println("\nYour stats will update in real time based on your interactions, so watch out for how your choices affect the game!");
         }
         else if (group.equals("b")){
             System.out.println("\nWelcome to McKinley High! Your name is " + fullName + " and you decided to join the Jocks. This means that in a count from 1 to 10, your current desire for the Glee Club to survive is at a 4.");
             wantToWin = 4;
-            System.out.println("Your stats will update in real time based on your interactions, so watch out for how your choices affect the game!");
+            Thread.sleep(1000);
+            System.out.println("\nYour stats will update in real time based on your interactions, so watch out for how your choices affect the game!");
         }
         else if (group.equals("c")){
             System.out.println("\nWelcome to McKinley High! Your name is " + fullName + " and you decided to just be a normie. This means that in a count from 1 to 10, your current desire for the Glee Club to survive is at a 5.");
             wantToWin = 5;
-            System.out.println("Your stats will update in real time based on your interactions, so watch out for how your choices affect the game!");
+            Thread.sleep(1000);
+            System.out.println("\nYour stats will update in real time based on your interactions, so watch out for how your choices affect the game!");
         }
         else{
             keyboard.close();
             throw new RuntimeException("Something went wrong");
         }
-        System.out.print("Have you played this game before? Please pick one of the following:\na. Yes\nb. No\n> ");
+        Thread.sleep(1000);
+        System.out.print("\nHave you played this game before? Please pick one of the following:\na. Yes\nb. No\n> ");
         playedBefore = keyboard.nextLine().toLowerCase();
-        System.out.println("Thank you for your patience. Now on to the game!");
+        Thread.sleep(1000);
+        System.out.println("\nThank you for your patience. Now on to the game!");
+        Thread.sleep(3000);
         if (playedBefore.equals("a")){
             Main.notFirstTime();
         }
@@ -88,9 +100,9 @@ public class Main {
         System.out.flush();
     }
 
-    public static void firstTime(){
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+    public static void firstTime() throws InterruptedException{
+        System.out.println("\n\n[Beginning of First Day]\n");
+        Thread.sleep(1000);
         System.out.println("You find yourself sitting in an incredibly uncomfortable chair in front of a large wooden desk. You look around and notice pamplets on every conceivable topic in pristine glass stands around the room. You were about to stand up to look at some of them closer, but the sound of the door opening behind you made you stay in your seat.\n");
         System.out.println(blue + "WOMAN: How are you feeling today, " + firstName + "? I heard you had a bit of a rough transistion, moving to Ohio. If there's anything I can do to help make things easier for you, just let me know.\n" + reset);
         System.out.println("As the ginger woman walks to her chair on the other side of the desk, she plucks a pamphlet from one of the many along the wall and examines it, finding it suitable to finally slide to you.\n");
@@ -115,14 +127,28 @@ public class Main {
                 System.out.println("\n" + firstName.toUpperCase() + ": Sure, what do I have to lose?");
                 System.out.println(red + "SUE: Amazing to hear. I already took your measurements while you were thinking, and I custom ordered your uniform using the miniature computer under my desk. The first Glee Club practice is in twenty minutes. Show up and break it up.\n" + reset);
                 wantToWin = wantToWin - 1;
-                System.out.println("Want To Win: -1 (New Score: " + wantToWin + ")");
+                if (wantToWin < 0){
+                    wantToWin = 0;
+                }
+                else if (wantToWin > 10){
+                    wantToWin = 10;
+                }
+                System.out.println("You're a true Cheerio. **Desire For Glee Club To Succeed: -1 (New Score: " + wantToWin + ")**");
+                Thread.sleep(4000);
                 Main.gleeClubIntro();
             }
             else if (sueAnswer.equals("b")){
                 System.out.println("\n" + firstName.toUpperCase() + ": I'm not sure I want to be a part of this.");
                 System.out.println(red + "SUE: Tough nuts, sweetheart. You're already in whether you like it or not. I took your measurements while you were thinking, and I've already custom ordered your uniform using the miniature computer under my desk. The first Glee Club practice is in twenty minutes. Show up and break it up.\n" + reset);
                 wantToWin = wantToWin + 1;
-                System.out.println("Want To Win: +1 (New Score: " + wantToWin + ")");
+                if (wantToWin < 0){
+                    wantToWin = 0;
+                }
+                else if (wantToWin > 10){
+                    wantToWin = 10;
+                }
+                System.out.println("Are you really a Cheerio? **Desire For Glee Club To Succeed: +1 (New Score: " + wantToWin + ")**");
+                Thread.sleep(4000);
                 Main.gleeClubIntro();
             }
         }
@@ -132,17 +158,56 @@ public class Main {
             System.out.println(blue + "MS. PILLSBURY: Oh! Do you think you would want to join? I told Will I'd bring him students that show interest!\n" + reset);
             System.out.println("You pause for a second, but nod affirmative. Behind you, the snickers of a gaggle of football players can be heard through the door to the locker room.\n");
             System.out.println(blue + "MS. PILLSBURY: Don't mind them, the football team can be full of real bullies, but you don't have to talk with them if you don't want to." + reset);
-            System.out.println(firstName.toUpperCase() + ": No, it's all right! I actually was planning to try out for the football team too, so I might as well meet my prospective teammates.\n");
-            System.out.println("You make a quick turn and wave back towards Ms. Pillsbury. She was nice, but you were ready to meet some actual people your age.\nUpon opening the door to the locker room, you are greeted by a wall of Jocks, staring at you with crossed arms.\n");
+            System.out.println(firstName.toUpperCase() + ": No, it's all right! I actually was scouted for the football team too, so I might as well meet my future teammates.\n");
+            System.out.println("You make a quick turn and wave back towards Ms. Pillsbury. She was nice, but you were ready to meet some actual people your age. Upon opening the door to the locker room, you are greeted by a wall of Jocks, staring at you with crossed arms.\n");
             Random rand = new Random();
-            Jock randomPerson = McKinleyHigh.jocks.get(rand.nextInt(McKinleyHigh.jocks.size()));
-            Boolean randomBool = randomPerson.gleeClub;
-            while (randomBool == true){
-                randomPerson = McKinleyHigh.jocks.get(rand.nextInt(McKinleyHigh.jocks.size()));
-                randomBool = randomPerson.gleeClub;
+            ArrayList<Jock> nonGleeJocks = new ArrayList<Jock>();
+            for (int i = 0; i < McKinleyHigh.jocks.size(); i++){
+                Jock person = McKinleyHigh.jocks.get(i);
+                Boolean gleePerson = person.gleeClub;
+                if (gleePerson == false){
+                    nonGleeJocks.add(person);
+                }
             }
+            Jock randomPerson = nonGleeJocks.get(rand.nextInt(nonGleeJocks.size()));
             String randomName = randomPerson.fullName;
-            System.out.println(green + randomName + ": How do you expect us to be" + reset);
+            System.out.println(green + randomName.toUpperCase() + ": Heard you're planning on joining the little pansy club. How cute. Now we'll have five people on the team there. I'm starting to think you guys should start picking one or the other." + reset);
+            randomPerson = nonGleeJocks.get(rand.nextInt(nonGleeJocks.size()));
+            randomName = randomPerson.fullName;
+            System.out.println(green + randomName.toUpperCase() + ": Nothing against you guys of course. We don't really care what you guys do, but you shouldn't be doing it in front of any of us." + reset);
+            randomPerson = nonGleeJocks.get(rand.nextInt(nonGleeJocks.size()));
+            randomName = randomPerson.fullName;
+            System.out.println(green + randomName.toUpperCase() + ": Well, hows about you choose. Do you want to join us and prove you're actually tougher than you look, or run off and join the church mouse choir?" + reset);
+            System.out.print("\nYou pause to think.\na. Yeah, I would rather join you guys.\nb. I think I'll stick with the Glee Club.\n> ");
+            jockAnswer = keyboard.nextLine().toLowerCase();
+            if (jockAnswer.equals("a")){
+                System.out.println("\n" + firstName.toUpperCase() + ": I want to be on the team with you.");
+                System.out.println(green + randomName.toUpperCase() + ": Good choice. Maybe it would still be good if you still showed up at Glee Club though. Then you could figure out how to get Finn and the others to stop splitting their time.\n" + reset);
+                wantToWin = wantToWin - 1;
+                if (wantToWin < 0){
+                    wantToWin = 0;
+                }
+                else if (wantToWin > 10){
+                    wantToWin = 10;
+                }
+                System.out.println("You're a true jock. **Desire For Glee Club To Succeed: -1 (New Score: " + wantToWin + ")**");
+                Thread.sleep(4000);
+                Main.gleeClubIntro();
+            }
+            else if (jockAnswer.equals("b")){
+                System.out.println("\n" + firstName.toUpperCase() + ": I think I have to follow my heart and join the Glee Club.");
+                System.out.println(green + randomName.toUpperCase() + ": Well, that shows how much devotion you actually have to football. Since Coach Beiste scouted you we can't really kick you off the team, but watch out.\n" + reset);
+                wantToWin = wantToWin + 1;
+                if (wantToWin < 0){
+                    wantToWin = 0;
+                }
+                else if (wantToWin > 10){
+                    wantToWin = 10;
+                }
+                System.out.println("Are you really a jock? **Desire For Glee Club To Succeed: +1 (New Score: " + wantToWin + ")**");
+                Thread.sleep(4000);
+                Main.gleeClubIntro();
+            }
         }
     }
 

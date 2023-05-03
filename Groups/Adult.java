@@ -12,7 +12,7 @@ public class Adult {
         this.firstName = firstName;
         this.lastName = lastName;
         this.fullName = firstName + " " + lastName;
-        this.wantToWin = 5;
-        this.gleeClub = false;
+        this.wantToWin = wantToWin;
+        this.gleeClub = gleeClub;
     }
 }

@@ -13,13 +13,14 @@ public class Jock {
         this.firstName = firstName;
         this.lastName = lastName;
         this.fullName = firstName + " " + lastName;
-        this.wantToWin = 4;
-        this.gleeClub = false;
+        this.wantToWin = wantToWin;
+        this.gleeClub = gleeClub;
     }
     public Jock (String firstName, String lastName, String nickName, int wantToWin, boolean gleeClub){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.wantToWin = 4;
-        this.gleeClub = false;
+        this.fullName = firstName + " " + lastName;
+        this.wantToWin = wantToWin;
+        this.gleeClub = gleeClub;
     }
 }

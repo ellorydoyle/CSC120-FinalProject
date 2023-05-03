@@ -7,6 +7,7 @@ import Groups.Adult;
 
 public class McKinleyHigh {
 
+    public static final String roster = null;
     static ArrayList<Cheerio> cheerios;
     static ArrayList<Jock> jocks;
     static ArrayList<Normie> normies;
