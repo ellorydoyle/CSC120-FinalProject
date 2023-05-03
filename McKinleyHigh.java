@@ -62,7 +62,7 @@ public class McKinleyHigh {
         roster.addCheerio(new Cheerio("Cheerio", "3", 2, false));
         roster.addCheerio(new Cheerio("Cheerio", "4", 2, false));
         roster.addCheerio(new Cheerio("Cheerio", "5", 2, false));
-        roster.addJock(new Jock("Jock", "1", 4, false));
+        roster.addJock(new Jock("Dave", "Karofsky", 4, false));
         roster.addJock(new Jock("Jock", "2", 4, false));
         roster.addJock(new Jock("Jock", "3", 4, false));
         roster.addJock(new Jock("Jock", "4", 4, false));

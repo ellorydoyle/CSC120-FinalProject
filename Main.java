@@ -18,6 +18,7 @@ public class Main {
     static String playedBefore;
     static String sueAnswer;
     static String jockAnswer;
+    static String nullAnswer;
     static Random random;
     static Scanner keyboard;
     public static final String blue = "\u001B[34m";
@@ -79,20 +80,12 @@ public class Main {
         }
         else{
             keyboard.close();
-            throw new RuntimeException("Something went wrong");
+            throw new RuntimeException("Something went wrong, please restart the game.");
         }
-        Thread.sleep(1000);
-        System.out.print("\nHave you played this game before? Please pick one of the following:\na. Yes\nb. No\n> ");
-        playedBefore = keyboard.nextLine().toLowerCase();
         Thread.sleep(1000);
         System.out.println("\nThank you for your patience. Now on to the game!");
         Thread.sleep(3000);
-        if (playedBefore.equals("a")){
-            Main.notFirstTime();
-        }
-        if (playedBefore.equals("b")){
-            Main.firstTime();
-        }
+        Main.firstTime();
     }
 
     public static void notFirstTime(){
@@ -122,7 +115,19 @@ public class Main {
             System.out.println(red + "SUE: You see, the Glee Club at this school has been ruining things for the better part of a month, and I need to get someone on the inside to help break the spirit of that club down to dust. The Cheerios I already sent in got all sappy and soft, so I need fresh blood. I'll let you wear the Cheerios uniform if you promise to make them lose at Sectionals, Figgins already said they would have to shut down if they can't come in first.\n" + reset);
             System.out.println("You take a moment to think.");
             System.out.print("a. Yeah, I'll help\nb. No, I don't really want to help.\n> ");
-            sueAnswer = keyboard.nextLine().toLowerCase();
+            boolean valid = false;
+            while (valid == false){
+                sueAnswer = keyboard.nextLine().toLowerCase(); 
+                if (sueAnswer.equals("a")){
+                    valid = true;
+                }
+                else if (sueAnswer.equals("b")){
+                    valid = true;
+                }
+                else{
+                    System.out.print("\nPlease input a valid response.\na. Yeah, I'll help\nb. No, I don't really want to help.\n> ");
+                }
+            }
             if (sueAnswer.equals("a")){
                 System.out.println("\n" + firstName.toUpperCase() + ": Sure, what do I have to lose?");
                 System.out.println(red + "SUE: Amazing to hear. I already took your measurements while you were thinking, and I custom ordered your uniform using the miniature computer under my desk. The first Glee Club practice is in twenty minutes. Show up and break it up.\n" + reset);
@@ -179,7 +184,19 @@ public class Main {
             randomName = randomPerson.fullName;
             System.out.println(green + randomName.toUpperCase() + ": Well, hows about you choose. Do you want to join us and prove you're actually tougher than you look, or run off and join the church mouse choir?" + reset);
             System.out.print("\nYou pause to think.\na. Yeah, I would rather join you guys.\nb. I think I'll stick with the Glee Club.\n> ");
-            jockAnswer = keyboard.nextLine().toLowerCase();
+            boolean valid = false;
+            while (valid == false){
+                jockAnswer = keyboard.nextLine().toLowerCase(); 
+                if (jockAnswer.equals("a")){
+                    valid = true;
+                }
+                else if (jockAnswer.equals("b")){
+                    valid = true;
+                }
+                else{
+                    System.out.print("\nPlease input a valid response.\na. Yeah, I would rather join you guys.\nb. I think I'll stick with the Glee Club.\n> ");
+                }
+            }
             if (jockAnswer.equals("a")){
                 System.out.println("\n" + firstName.toUpperCase() + ": I want to be on the team with you.");
                 System.out.println(green + randomName.toUpperCase() + ": Good choice. Maybe it would still be good if you still showed up at Glee Club though. Then you could figure out how to get Finn and the others to stop splitting their time.\n" + reset);
@@ -209,10 +226,39 @@ public class Main {
                 Main.gleeClubIntro();
             }
         }
+        else if (group.equals("c")){
+            System.out.println("As Ms. Pillsbury walks you out of the office, you feel a sudden mood shift. Your anxiety from earlier melts away when you see a sign-up sheet on the corkboard as you pass through the hallway.\n");
+            System.out.println(firstName.toUpperCase() + ": The Glee Club?");
+            System.out.println(blue + "MS. PILLSBURY: Oh! Do you think you would want to join? I told Will I'd bring him students that show interest!\n" + reset);
+            System.out.print("\nYou pause and consider.\na. I actually really do.\nb. No, that sounds lame.\n> ");
+            nullAnswer = keyboard.nextLine().toLowerCase();
+            System.out.println("\n" + firstName.toUpperCase() + ": I-\n");
+            System.out.println("Before you could even answer, Ms. Pillsbury started excitedly ushering you down the hallway. I guess you just have to see what the club has in store for you.\n");
+            System.out.println("**Desire For Glee Club To Succeed: +0 (New Score: " + wantToWin + ")**");
+            Thread.sleep(4000);
+            Main.gleeClubIntro();
+        }
     }
 
-    public static void gleeClubIntro(){
-
+    public static void gleeClubIntro() throws InterruptedException{
+        System.out.println("\n\n[At Glee Club]\n");
+        Thread.sleep(1000);
+        System.out.println("Before you know it, you turn the corner into the choir room door. You had never seen a room so full of outcasts before, it was almost like you walked into a Glee Club meeting.\n");
+        System.out.println(blue + "MR. SCHUE: Welcome to the Glee Club, " + firstName + ". My name is Mr. Schuester, and I hope you find a home in our humble practice room.\n" + reset);
+        System.out.println("Your mind starts to race, maybe this place isn't right for you, but there's no way better to find out than trying. Just as you take a breath, an overly enthusiastic brunette pops in front of you.\n");
+        System.out.println(green + "RACHEL: I'm Rachel Berry! I've already heard a bit about you through the grapevine. I hope you're really serious about this club, because I don't take kindly to slackers. I've silently been hoping that Matt Rutherford would drop out, he doesn't contribute anything to the overall group morale." + reset);
+        System.out.println(firstName.toUpperCase() + ": Who's Matt?");
+        System.out.println(green + "PUCK: No one knows who she's talking about." + reset);
+        System.out.println(green + "RACHEL: I PROMISE you, he's real. He's sitting right back there.\n" + reset);
+        System.out.println("She points to the back of the classroom, but you don't notice anyone sitting there. You do, however, feel this strange sense that someone is missing. Nevermind that, though.\n");
+        System.out.println(blue + "MR. SCHUE: Everyone settle down. I have a couple important announcements to share with you all.\n" + reset);
+        System.out.println("You make your way to a seat in the very front, but you can tell everyone's eyes are lingering on you without actually seeing them.\n");
+        System.out.println(blue + "MR. SCHUE: First, we have a new member joining us today, everyone give a warm welcome to " + firstName + "." + reset);
+        System.out.println(green + "EVERYONE: Welllccccooommmee, " + firstName + "." + reset);
+        System.out.println(blue + "MR. SCHUE: Second, we have a tough season ahead of us. Figgins told me that if we can't win sectionals this year, then the Glee Club will be disbanded and Coach Sylvester will take the room over for the Cheerios." + reset);
+        System.out.println(green + "SANTANA: Doesn't this happen every year?" + reset);
+        System.out.println(blue + "MR. SCHUE: And it's as serious a threat as ever. We're going to have to be on the top of our game, and everyone needs to make sure they get along.\n" + reset);
+        System.out.println("");
     }
 
 }
