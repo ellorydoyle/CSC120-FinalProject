@@ -16,6 +16,7 @@ public class Main {
     static String group;
     static int wantToWin;
     static String playedBefore;
+    static String finishedReading;
     static String sueAnswer;
     static String jockAnswer;
     static String nullAnswer;
@@ -36,7 +37,6 @@ public class Main {
         Main.wantToWin = wantToWin;
         Main.playedBefore = playedBefore;
     }
-
     public static void main(String[] args) throws InterruptedException{
         System.out.println(reset);
         System.out.print("\033[H\033[2J");
@@ -88,11 +88,6 @@ public class Main {
         Main.firstTime();
     }
 
-    public static void notFirstTime(){
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-
     public static void firstTime() throws InterruptedException{
         System.out.println("\n\n[Beginning of First Day]\n");
         Thread.sleep(1000);
@@ -101,8 +96,10 @@ public class Main {
         System.out.println("As the ginger woman walks to her chair on the other side of the desk, she plucks a pamphlet from one of the many along the wall and examines it, finding it suitable to finally slide to you.\n");
         System.out.println("\"SO YOUR PARENTS LOST THEIR JOBS AND YOU HAD TO MOVE TO OHIO\"\nThe pamphlet's bold title kind of threw you off guard. Your parents actually got promotions, but you didn't think it mattered so much that you needed to correct her.\n");
         System.out.println(blue + "MS. PILLSBURY: You can read through that during passing period, we have about thirty minutes in between each class but it shouldn't take you that long. I'm Ms. Pillsbury, the guidance counselor, and I'll check in with you every so often to see how you adjust to your new school! I'll walk you to your first class now, but I want you to give some serious thought to joining a club, too! It's a great way to make friends.\n" + reset);
+        System.out.println("[ONCE DONE READING, PRESS ENTER]");
+        finishedReading = keyboard.nextLine();
         if (group.equals("a")){
-            System.out.println("As Ms. Pillsbury walks you out of the office, you see a tall, blonde woman in a bright red tracksuit, with a haircut that only Hillary Clinton could love storming her way down the hallway.\n");
+            System.out.println("\nAs Ms. Pillsbury walks you out of the office, you see a tall, blonde woman in a bright red tracksuit, with a haircut that only Hillary Clinton could love storming her way down the hallway.\n");
             System.out.println(red + "ANGRY WOMAN: UNBELIEVABLE! Butt Chin is ruining this school and every single one of you pimple-faced kleptomaniacs are complicit in his absolute reign of idiocy!" + reset);
             System.out.println(blue + "MS. PILLSBURY: Be careful, you don't want to get caught in the same hallway as Sue once she launches into a tirade. She sprayed an entire fire extinguisher on a kid in a wheelchair one time and a little bit got on my blouse. I had to leave work early that day.\n" + reset);
             System.out.println("As you watch Sue begin to pass by, you notice that her eyes lock onto yours. She pauses, just a foot behind you.\n");
@@ -139,6 +136,8 @@ public class Main {
                     wantToWin = 10;
                 }
                 System.out.println("You're a true Cheerio. **Desire For Glee Club To Succeed: -1 (New Score: " + wantToWin + ")**");
+                System.out.println("[ONCE DONE READING, PRESS ENTER]");
+                finishedReading = keyboard.nextLine();
                 Thread.sleep(4000);
                 Main.gleeClubIntro();
             }
@@ -153,12 +152,14 @@ public class Main {
                     wantToWin = 10;
                 }
                 System.out.println("Are you really a Cheerio? **Desire For Glee Club To Succeed: +1 (New Score: " + wantToWin + ")**");
+                System.out.println("[ONCE DONE READING, PRESS ENTER]");
+                finishedReading = keyboard.nextLine();
                 Thread.sleep(4000);
                 Main.gleeClubIntro();
             }
         }
         else if (group.equals("b")){
-            System.out.println("As Ms. Pillsbury walks you out of the office, you feel a sudden mood shift. Your anxiety from earlier melts away when you see a sign-up sheet on the corkboard as you pass through the hallway.\n");
+            System.out.println("\nAs Ms. Pillsbury walks you out of the office, you feel a sudden mood shift. Your anxiety from earlier melts away when you see a sign-up sheet on the corkboard as you pass through the hallway.\n");
             System.out.println(firstName.toUpperCase() + ": The Glee Club?");
             System.out.println(blue + "MS. PILLSBURY: Oh! Do you think you would want to join? I told Will I'd bring him students that show interest!\n" + reset);
             System.out.println("You pause for a second, but nod affirmative. Behind you, the snickers of a gaggle of football players can be heard through the door to the locker room.\n");
@@ -208,6 +209,8 @@ public class Main {
                     wantToWin = 10;
                 }
                 System.out.println("You're a true jock. **Desire For Glee Club To Succeed: -1 (New Score: " + wantToWin + ")**");
+                System.out.println("[ONCE DONE READING, PRESS ENTER]");
+                finishedReading = keyboard.nextLine();
                 Thread.sleep(4000);
                 Main.gleeClubIntro();
             }
@@ -222,12 +225,14 @@ public class Main {
                     wantToWin = 10;
                 }
                 System.out.println("Are you really a jock? **Desire For Glee Club To Succeed: +1 (New Score: " + wantToWin + ")**");
+                System.out.println("[ONCE DONE READING, PRESS ENTER]");
+                finishedReading = keyboard.nextLine();
                 Thread.sleep(4000);
                 Main.gleeClubIntro();
             }
         }
         else if (group.equals("c")){
-            System.out.println("As Ms. Pillsbury walks you out of the office, you feel a sudden mood shift. Your anxiety from earlier melts away when you see a sign-up sheet on the corkboard as you pass through the hallway.\n");
+            System.out.println("\nAs Ms. Pillsbury walks you out of the office, you feel a sudden mood shift. Your anxiety from earlier melts away when you see a sign-up sheet on the corkboard as you pass through the hallway.\n");
             System.out.println(firstName.toUpperCase() + ": The Glee Club?");
             System.out.println(blue + "MS. PILLSBURY: Oh! Do you think you would want to join? I told Will I'd bring him students that show interest!\n" + reset);
             System.out.print("\nYou pause and consider.\na. I actually really do.\nb. No, that sounds lame.\n> ");
@@ -235,6 +240,8 @@ public class Main {
             System.out.println("\n" + firstName.toUpperCase() + ": I-\n");
             System.out.println("Before you could even answer, Ms. Pillsbury started excitedly ushering you down the hallway. I guess you just have to see what the club has in store for you.\n");
             System.out.println("**Desire For Glee Club To Succeed: +0 (New Score: " + wantToWin + ")**");
+            System.out.println("[ONCE DONE READING, PRESS ENTER]");
+            finishedReading = keyboard.nextLine();
             Thread.sleep(4000);
             Main.gleeClubIntro();
         }
@@ -258,7 +265,12 @@ public class Main {
         System.out.println(blue + "MR. SCHUE: Second, we have a tough season ahead of us. Figgins told me that if we can't win sectionals this year, then the Glee Club will be disbanded and Coach Sylvester will take the room over for the Cheerios." + reset);
         System.out.println(green + "SANTANA: Doesn't this happen every year?" + reset);
         System.out.println(blue + "MR. SCHUE: And it's as serious a threat as ever. We're going to have to be on the top of our game, and everyone needs to make sure they get along.\n" + reset);
-        System.out.println("");
+        System.out.println("You look over your shoulder to all the students behind you and wonder...\n");
+        System.out.println(firstName.toUpperCase() + ": Wait, do I even know how to sing?");
+        System.out.println("[ONCE DONE READING, PRESS ENTER]");
+        finishedReading = keyboard.nextLine();
+        keyboard.close();
+        Week1.choice1();
     }
 
 }
