@@ -37,6 +37,7 @@ public class Main {
         Main.wantToWin = wantToWin;
         Main.playedBefore = playedBefore;
     }
+
     public static void main(String[] args) throws InterruptedException{
         System.out.println(reset);
         System.out.print("\033[H\033[2J");
@@ -65,18 +66,21 @@ public class Main {
             wantToWin = 2;
             Thread.sleep(1000);
             System.out.println("\nYour stats will update in real time based on your interactions, so watch out for how your choices affect the game!");
+            System.out.println("\nOBJECTIVE:\nMake your Desire to Win score align with the outcome of Sectionals. The more you upset the Glee Club, the less likely they are to win, and vice-versa. Both your desire level and the Club's likelyhood to win changes based on your interactions.");
         }
         else if (group.equals("b")){
             System.out.println("\nWelcome to McKinley High! Your name is " + fullName + " and you decided to join the Jocks. This means that in a count from 1 to 10, your current desire for the Glee Club to survive is at a 4.");
             wantToWin = 4;
             Thread.sleep(1000);
             System.out.println("\nYour stats will update in real time based on your interactions, so watch out for how your choices affect the game!");
+            System.out.println("\nOBJECTIVE:\nMake your Desire to Win score align with the outcome of Sectionals. The more you upset the Glee Club, the less likely they are to win, and vice-versa. Both your desire level and the Club's likelyhood to win changes based on your interactions.");
         }
         else if (group.equals("c")){
             System.out.println("\nWelcome to McKinley High! Your name is " + fullName + " and you decided to just be a normie. This means that in a count from 1 to 10, your current desire for the Glee Club to survive is at a 5.");
             wantToWin = 5;
             Thread.sleep(1000);
             System.out.println("\nYour stats will update in real time based on your interactions, so watch out for how your choices affect the game!");
+            System.out.println("\nOBJECTIVE:\nMake your Desire to Win score align with the outcome of Sectionals. The more you upset the Glee Club, the less likely they are to win, and vice-versa. Both your desire level and the Club's likelyhood to win changes based on your interactions.");
         }
         else{
             keyboard.close();
