@@ -269,7 +269,6 @@ public class Main {
         System.out.println(firstName.toUpperCase() + ": Wait, do I even know how to sing?");
         System.out.println("[ONCE DONE READING, PRESS ENTER]");
         finishedReading = keyboard.nextLine();
-        keyboard.close();
         Week1.choice1();
     }
 
