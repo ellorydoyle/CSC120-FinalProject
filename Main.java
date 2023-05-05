@@ -3,11 +3,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import Groups.Cheerio;
-import Groups.Jock;
-import Groups.Normie;
-import Groups.Adult;
-
 public class Main {
 
     static String firstName;

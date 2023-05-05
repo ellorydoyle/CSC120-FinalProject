@@ -1,13 +1,8 @@
 import java.util.ArrayList;
 
-import Groups.Cheerio;
-import Groups.Jock;
-import Groups.Normie;
-import Groups.Adult;
-
 public class McKinleyHigh {
 
-    public static final String roster = null;
+    public static McKinleyHigh roster;
     static ArrayList<Cheerio> cheerios;
     static ArrayList<Jock> jocks;
     static ArrayList<Normie> normies;
@@ -19,6 +14,7 @@ public class McKinleyHigh {
         jocks = new ArrayList<Jock>();
         normies = new ArrayList<Normie>();
         adults = new ArrayList<Adult>();
+        roster = new McKinleyHigh();
     }
 
     public void addCheerio(Cheerio b){
@@ -38,7 +34,6 @@ public class McKinleyHigh {
     }
 
     public static void main(){
-        McKinleyHigh roster = new McKinleyHigh();
         roster.addCheerio(new Cheerio("Santana", "Lopez", 6, true));
         roster.addJock(new Jock("Finn", "Hudson", 8, true));
         roster.addNormie(new Normie("Rachel", "Berry", 10, true));
@@ -77,4 +72,8 @@ public class McKinleyHigh {
             roster.addNormie(new Normie(Main.firstName, Main.lastName, 5, true));
         }
     }
+
+	public int size() {
+		return 0;
+	}
 }
