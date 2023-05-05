@@ -61,14 +61,14 @@ public class McKinleyHigh {
         roster.addJock(new Jock("Jock", "3", 4, false));
         roster.addJock(new Jock("Jock", "4", 4, false));
         roster.addJock(new Jock("Jock", "5", 4, false));
-        if (Main.group.equals("a")){
-            roster.addCheerio(new Cheerio(Main.firstName, Main.lastName, 2, true));
-        }
-        if (Main.group.equals("b")){
-            roster.addJock(new Jock(Main.firstName, Main.lastName, 4, true));
-        }
-        if (Main.group.equals("c")){
-            roster.addNormie(new Normie(Main.firstName, Main.lastName, 5, true));
-        }
+       // if (Main.group.equals("a")){
+            //roster.addCheerio(new Cheerio(Main.firstName, Main.lastName, 2, true));
+       // }
+       // if (Main.group.equals("b")){
+            //roster.addJock(new Jock(Main.firstName, Main.lastName, 4, true));
+       // }
+      //  if (Main.group.equals("c")){
+            //roster.addNormie(new Normie(Main.firstName, Main.lastName, 5, true));
+       // }
     }
 }
