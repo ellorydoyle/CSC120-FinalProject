@@ -8,12 +8,7 @@ import com.sun.tools.javac.Main;
 public class GleeClub {
 
 	static ArrayList<GleeClub> gleeMember;
-	static ArrayList<Jock> gleeJocks;
-	static String gleeJockName;
-	static ArrayList<Cheerio> gleeCheerios;
-	static String gleeCheerioName;
-	static ArrayList<Normie> gleeNormies;
-	static String gleeNormieName;
+	static ArrayList<String> randomGleeKidGenerator;
 	
 	///go into club
 	///random generate someone to interact with (go to class of person's clique)
@@ -25,13 +20,14 @@ public class GleeClub {
 	////**working with cheerios rn**
 
 	public GleeClub(){
-		gleeMember = new ArrayList<GleeClub>();
+		GleeClub.gleeMember = new ArrayList<GleeClub>();
+		GleeClub.randomGleeKidGenerator = new ArrayList<String>();
 	}
 
-	public static void randomGleeMember(){
-		Jock.pullGleeJocks();
-		Cheerio.pullGleeCheerios();
-		Normie.pullGleeNormies();
+	public static String randomGleeMember(){
+		ArrayList<Jock> gleeJocks = Jock.pullGleeJocks();
+		ArrayList<Cheerio> gleeCheerios = Cheerio.pullGleeCheerios();
+		ArrayList<Normie> gleeNormies = Normie.pullGleeNormies();
 		Random rand = new Random();
 		Jock randomJock = gleeJocks.get(rand.nextInt(gleeJocks.size()));
         String randomJockName = randomJock.fullName;
@@ -41,20 +37,23 @@ public class GleeClub {
 		Random rand2 = new Random();
 		Normie randomNormie = gleeNormies.get(rand2.nextInt(gleeNormies.size()));
         String randomNormieName = randomNormie.fullName;
+		randomGleeKidGenerator.add(randomJockName);
+		randomGleeKidGenerator.add(randomCheerioName);
+		randomGleeKidGenerator.add(randomNormieName);
 		Random rand3 = new Random();
-		int randomNumber = rand.nextInt(3);
-		if (randomNumber == 0){
-			String randomGleeMember = randomJockName;
-		}
-		else if (randomNumber == 1){
-			String randomGleeMember = randomCheerioName;
-		}
-		else if (randomNumber == 2){
-			String randomGleeMember = randomNormieName;
-		}
+		String randomGleeKid = randomGleeKidGenerator.get(rand3.nextInt(randomGleeKidGenerator.size()));
+		GleeClub.randomGleeKidGenerator.clear();
+		return randomGleeKid;
 	}
+
 
 
 	public static void interactingWithMembers(){
 	}
+
+	public static void main(String[] args){
+        McKinleyHigh.main();
+		String randomGleeKid = randomGleeMember();
+		System.out.println(randomGleeKid);
+    }
 }
