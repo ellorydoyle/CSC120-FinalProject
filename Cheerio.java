@@ -1,7 +1,7 @@
-package Groups;
+
 
 import java.util.ArrayList;
-import java.util.Random;
+
 
 public class Cheerio {
       
@@ -23,8 +23,7 @@ public class Cheerio {
         gleeCheerios = new ArrayList<Cheerio>();
     }
 
-    public static String pullnonGleeCheerios(){
-        Random rand = new Random();
+    public static ArrayList<Cheerio> pullnonGleeCheerios(){
         for (int i = 0; i < McKinleyHigh.cheerios.size(); i++){
             Cheerio person = McKinleyHigh.cheerios.get(i);
             Boolean gleePerson = person.gleeClub;
@@ -32,22 +31,18 @@ public class Cheerio {
                 nonGleeCheerios.add(person);
             }
         }
-        Cheerio randomPerson = nonGleeCheerios.get(rand.nextInt(nonGleeCheerios.size()));
-        String randomName = randomPerson.fullName;
-        return randomName;
+        return nonGleeCheerios;
     }
 
-    public static String pullGleeCheerios(){
-        Random rand = new Random();
+    public static ArrayList<Cheerio> pullGleeCheerios(){
         for (int i = 0; i < McKinleyHigh.cheerios.size(); i++){
+            
             Cheerio person = McKinleyHigh.cheerios.get(i);
             Boolean gleePerson = person.gleeClub;
             if (gleePerson == true){
                 gleeCheerios.add(person);
             }
         }
-        Cheerio randomPerson = gleeCheerios.get(rand.nextInt(gleeCheerios.size()));
-        String randomName = randomPerson.fullName;
-        return randomName;
+        return gleeCheerios;
     }
 }
