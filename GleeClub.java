@@ -22,6 +22,8 @@ public class GleeClub {
 
 	////**working with cheerios rn**
 
+	///random generate a number, that number decides clique, then random inside the clique
+
 	public GleeClub(ArrayList<Object> randomGleeKidGenerator){
 		GleeClub.randomJockInfo = new ArrayList<Object>();
 		GleeClub.randomCheerioInfo = new ArrayList<Object>();
