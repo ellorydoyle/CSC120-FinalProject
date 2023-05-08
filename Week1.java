@@ -49,17 +49,34 @@ public class Week1 {
         Thread.sleep(2000);
         System.out.println("You walk into the hallway, the scent of high school sadness filling your nostrils. You're excited for your first week at McKinley, and your first week working with the Glee Club, but you don't know where to start.\n");
         System.out.print("a. Talk with Glee Club\nb. Sing a song\nc. Go to your clique\n> ");
-        week1Choice1 = keyboard.nextLine().toLowerCase();
-        if (week1Choice1.equals("a")){
-            System.out.println("\nYou are talking with the Glee Club");
+        boolean valid = false;
+        while (valid == false){
+            week1Choice1 = keyboard.nextLine().toLowerCase(); 
+            if (week1Choice1.equals("a")){
+                GleeClub.randomGleeClique();
+                valid = true;
+            }
+            else if (week1Choice1.equals("b")){
+                valid = true;
+                System.out.println("\nYou are singing a song");
+            }
+            else if (week1Choice1.equals("c")){
+                valid = true;
+                System.out.println("\nYou are talking with your clique");
+            }
+            else{
+                System.out.print("\nPlease input a valid response.\na. Talk with Glee Club\nb. Sing a song\nc. Go to your clique\n> ");
+            }
         }
-        if (week1Choice1.equals("b")){
-            System.out.println("\nYou are singing a song");
-        }
-        if (week1Choice1.equals("c")){
-            System.out.println("\nYou are talking with your clique");
-        }
-        System.out.println("\n[END OF DEMO]");
+        choice2();
+    }
+
+    public static void choice2() throws InterruptedException{
+        choice3();
+    }
+
+    public static void choice3() throws InterruptedException{
+        Week2.choice1();
     }
         
 }

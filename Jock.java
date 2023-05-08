@@ -1,5 +1,9 @@
 import java.util.ArrayList;
-
+import java.util.Random;
+///three options for each glee interaction per clique
+	///desire to win goes up if you talk with a glee member in your clique
+	///desire to win falls if you talk with a glee member not in your clique
+	///club unity goes up if you talk nice with person
 public class Jock {
       
     public String firstName;
@@ -30,7 +34,7 @@ public class Jock {
         gleeJocks = new ArrayList<Jock>();
     }
 
-    public static ArrayList<Jock> pullnonGleeJocks(){
+    public static ArrayList<Jock> pullNonGleeJocks(){
         for (int i = 0; i < McKinleyHigh.jocks.size(); i++){
             Jock person = McKinleyHigh.jocks.get(i);
             Boolean gleePerson = person.gleeClub;
@@ -52,4 +56,32 @@ public class Jock {
         }
         return gleeJocks;
     }
+
+    public static void generateRandomInteraction(){
+        ArrayList<Jock> gleeJocks = GleeClub.compileGleeJocks();
+		Random rand1 = new Random();
+		Jock randomJock = gleeJocks.get(rand1.nextInt(gleeJocks.size()));
+		String jockName = randomJock.firstName;
+        Random rand = new Random();
+        int randomInteraction = rand.nextInt((3));
+        if (randomInteraction == 0){
+            interaction1(jockName);
+        }
+        if (randomInteraction == 1){
+            interaction2(jockName);
+        }
+        if (randomInteraction == 2){
+            interaction3(jockName);
+        }
+    }
+
+    public static void interaction1(String jockName){
+    }
+
+    public static void interaction2(String jockName){
+    }
+
+    public static void interaction3(String jockName){
+    }
+    
 }
