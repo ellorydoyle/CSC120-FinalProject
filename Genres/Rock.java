@@ -1,5 +1,5 @@
 package Genres;
 
-public class Rock {
+public enum Rock {
     
 }

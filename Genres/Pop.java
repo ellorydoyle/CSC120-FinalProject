@@ -1,5 +1,5 @@
 package Genres;
 
-public class Pop {
+public enum Pop {
     
 }

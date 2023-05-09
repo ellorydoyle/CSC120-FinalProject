@@ -1,5 +1,5 @@
 package Genres;
 
-public class Broadway {
+public enum Broadway {
     
 }
