@@ -17,6 +17,7 @@ public class Main {
     static String nullAnswer;
     static Random random;
     static Scanner keyboard;
+    static int gleeOutcome;
     public static final String blue = "\u001B[34m";
     public static final String red = "\u001B[31m";
     public static final String green = "\u001B[32m";
@@ -30,6 +31,7 @@ public class Main {
         Main.fullName = firstName + " " + lastName;
         Main.group = group;
         Main.wantToWin = wantToWin;
+        Main.gleeOutcome = gleeOutcome;
         Main.playedBefore = playedBefore;
     }
 
@@ -137,7 +139,7 @@ public class Main {
                 System.out.println("You're a true Cheerio. **Desire For Glee Club To Succeed: -1 (New Score: " + wantToWin + ")**");
                 System.out.println("[ONCE DONE READING, PRESS ENTER]");
                 finishedReading = keyboard.nextLine();
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 Main.gleeClubIntro();
             }
             else if (sueAnswer.equals("b")){
@@ -153,7 +155,7 @@ public class Main {
                 System.out.println("Are you really a Cheerio? **Desire For Glee Club To Succeed: +1 (New Score: " + wantToWin + ")**");
                 System.out.println("[ONCE DONE READING, PRESS ENTER]");
                 finishedReading = keyboard.nextLine();
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 Main.gleeClubIntro();
             }
         }
@@ -210,7 +212,7 @@ public class Main {
                 System.out.println("You're a true jock. **Desire For Glee Club To Succeed: -1 (New Score: " + wantToWin + ")**");
                 System.out.println("[ONCE DONE READING, PRESS ENTER]");
                 finishedReading = keyboard.nextLine();
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 Main.gleeClubIntro();
             }
             else if (jockAnswer.equals("b")){
@@ -226,7 +228,7 @@ public class Main {
                 System.out.println("Are you really a jock? **Desire For Glee Club To Succeed: +1 (New Score: " + wantToWin + ")**");
                 System.out.println("[ONCE DONE READING, PRESS ENTER]");
                 finishedReading = keyboard.nextLine();
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 Main.gleeClubIntro();
             }
         }
@@ -241,7 +243,7 @@ public class Main {
             System.out.println("**Desire For Glee Club To Succeed: +0 (New Score: " + wantToWin + ")**");
             System.out.println("[ONCE DONE READING, PRESS ENTER]");
             finishedReading = keyboard.nextLine();
-            Thread.sleep(4000);
+            Thread.sleep(2000);
             Main.gleeClubIntro();
         }
     }
@@ -268,6 +270,7 @@ public class Main {
         System.out.println(firstName.toUpperCase() + ": Wait, do I even know how to sing?");
         System.out.println("[ONCE DONE READING, PRESS ENTER]");
         finishedReading = keyboard.nextLine();
+        gleeOutcome = 10;
         Week1.choice1();
     }
 
