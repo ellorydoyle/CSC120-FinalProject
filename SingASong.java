@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import Genres.Broadway;
+import Genres.Pop;
+import Genres.Rock;
+
 public class SingASong {
 	
 	//Go to club
@@ -69,14 +73,19 @@ public class SingASong {
 	}
 
 	public static void randomBroadwaySong(){
-
+		String broadwaySong = Broadway.randomBroadway();
+		System.out.println(broadwaySong);
 	}
 
 	public static void randomPopSong(){
-		
+		String popSong = Pop.randomPop();
 	}
 
 	public static void randomRockSong(){
-		
+		String rockSong = Rock.randomRock();
 	}
+	public static void main(String[] args) throws InterruptedException{
+        randomBroadwaySong();
+    }
 }
+
