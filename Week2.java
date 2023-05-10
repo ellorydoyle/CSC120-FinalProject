@@ -29,8 +29,8 @@ public class Week2 {
                 valid = true;
             }
             else if (week2Choice1.equals("b")){
+                SingASong.pickAGenre();
                 valid = true;
-                System.out.println("\nYou are singing a song");
             }
             else{
                 System.out.print("\nPlease input a valid response.\na. Talk with Glee Club\nb. Sing a song\n> ");
@@ -50,8 +50,8 @@ public class Week2 {
                 valid = true;
             }
             else if (week2Choice2.equals("b")){
+                SingASong.pickAGenre();
                 valid = true;
-                System.out.println("\nYou are singing a song");
             }
             else{
                 System.out.print("\nPlease input a valid response.\na. Talk with Glee Club\nb. Sing a song\n> ");
@@ -71,14 +71,14 @@ public class Week2 {
                 valid = true;
             }
             else if (week2Choice3.equals("b")){
+                SingASong.pickAGenre();
                 valid = true;
-                System.out.println("\nYou are singing a song");
             }
             else{
                 System.out.print("\nPlease input a valid response.\na. Talk with Glee Club\nb. Sing a song\n> ");
             }
         }
-        //Week3.choice1();
+        Week3.choice1();
 	}
 
 }

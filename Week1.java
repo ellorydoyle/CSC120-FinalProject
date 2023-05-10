@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Week1 {
@@ -59,8 +57,8 @@ public class Week1 {
                 valid = true;
             }
             else if (week1Choice1.equals("b")){
+                SingASong.pickAGenre();
                 valid = true;
-                System.out.println("\nYou are singing a song");
             }
             else{
                 System.out.print("\nPlease input a valid response.\na. Talk with Glee Club\nb. Sing a song\n> ");
@@ -80,8 +78,8 @@ public class Week1 {
                 valid = true;
             }
             else if (week1Choice2.equals("b")){
+                SingASong.pickAGenre();
                 valid = true;
-                System.out.println("\nYou are singing a song");
             }
             else{
                 System.out.print("\nPlease input a valid response.\na. Talk with Glee Club\nb. Sing a song\n> ");
@@ -101,8 +99,8 @@ public class Week1 {
                 valid = true;
             }
             else if (week1Choice3.equals("b")){
+                SingASong.pickAGenre();
                 valid = true;
-                System.out.println("\nYou are singing a song");
             }
             else{
                 System.out.print("\nPlease input a valid response.\na. Talk with Glee Club\nb. Sing a song\n> ");
