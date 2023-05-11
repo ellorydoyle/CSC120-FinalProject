@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -6,57 +5,29 @@ import Genres.Broadway;
 import Genres.Pop;
 import Genres.Rock;
 
+/** 
+ *  Class representing Singing a Song
+ */
 public class SingASong {
-	
-	//Go to club
-	//pick a genre
-	//random generate a member to react
-	//desire goes up when singing
-	//random choice determines club unity
-
-	public static Jock person1;
-	public static Cheerio person2;
-	public static Normie person3;
-	public static String randomName;
+    /**  Random songChoice */
 	public static String songChoice;
+    /**  User input */
 	static Scanner keyboard;
+    /**  When is the user finished reading */
 	public static String finishedReading;
-	public static final String blue = "\u001B[34m";
+    /**  Makes text appear blue */
+    public static final String blue = "\u001B[34m";
+    /**  Makes text appear red */
     public static final String red = "\u001B[31m";
+    /**  Makes text appear green */
     public static final String green = "\u001B[32m";
+    /**  Makes text reset to normal */
     public static final String reset = "\u001B[0m";
 
-	public SingASong(){
-		keyboard = new Scanner(System.in);
-	}
-
-	public static String randomNameGenerator(){
-		Random rand = new Random();
-		int randomClique = rand.nextInt((3));
-		if (randomClique == 0){
-			ArrayList<Jock> jocks = Jock.pullGleeJocks();
-			for (int i = 0; i < jocks.size(); i++){
-                person1 = jocks.get(i);
-            }
-            randomName = person1.firstName;
-		}
-		if (randomClique == 1){
-			ArrayList<Cheerio> cheerios = Cheerio.pullGleeCheerios();
-			for (int i = 0; i < cheerios.size(); i++){
-                person2 = cheerios.get(i);
-            }
-            randomName = person2.firstName;
-		}
-		if(randomClique == 2){
-			ArrayList<Normie> normies = Normie.pullGleeNormies();
-			for (int i = 0; i < normies.size(); i++){
-                person3 = normies.get(i);
-            }
-            randomName = person3.firstName;
-		}
-		return randomName;
-	}
-
+    /** 
+ 	 *  Picking a genre
+	 * @throws InterruptedException
+ 	 */
 	public static void pickAGenre() throws InterruptedException{
 		keyboard = new Scanner(System.in);
 		System.out.println("\nYou enter the choir room and snap towards the piano player. You telepathically tell him which song you want to sing. What genre is it?");
@@ -81,7 +52,10 @@ public class SingASong {
             }
         }
 	}
-
+    /** 
+ 	 *  You sing a random Broadway song
+	 * @throws InterruptedException
+ 	 */
 	public static void randomBroadwaySong() throws InterruptedException{
 		String broadwaySong = Broadway.randomBroadway();
 		System.out.println("\nYou feel determined to blow everyone in the Glee Club's mind with a rendition of " + broadwaySong + " in the choir room. After gathering everyone, you begin to belt it out.\n");
@@ -155,6 +129,10 @@ public class SingASong {
 		}
 	}
 
+    /** 
+ 	 *  You sing a random Pop song
+	 * @throws InterruptedException
+ 	 */
 	public static void randomPopSong() throws InterruptedException{
 		String popSong = Pop.randomPop();
 		System.out.println("\nYou feel determined to blow everyone in the Glee Club's mind with a rendition of " + popSong + " in the choir room. After gathering everyone, you begin to belt it out.\n");
@@ -229,6 +207,10 @@ public class SingASong {
 		}
 	}
 
+    /** 
+ 	 *  You sing a random Rock song
+	 * @throws InterruptedException
+ 	 */
 	public static void randomRockSong() throws InterruptedException{
 		String rockSong = Rock.randomRock();
 		System.out.println("\nYou feel determined to blow everyone in the Glee Club's mind with a rendition of " + rockSong + " in the choir room. After gathering everyone, you begin to belt it out.\n");
@@ -302,8 +284,5 @@ public class SingASong {
             finishedReading = keyboard.nextLine();
 		}
 	}
-	public static void main(String[] args) throws InterruptedException{
-        pickAGenre();
-    }
 }
 

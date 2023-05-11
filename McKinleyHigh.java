@@ -7,7 +7,7 @@ public class McKinleyHigh {
     static ArrayList<Normie> normies;
     static ArrayList<Adult> adults;
 
-
+    /* Default constructor, initializes empty ArrayLists */
     public McKinleyHigh() {
         cheerios = new ArrayList<Cheerio>();
         jocks = new ArrayList<Jock>();
@@ -15,22 +15,41 @@ public class McKinleyHigh {
         adults = new ArrayList<Adult>();
     }
 
+    /**
+     * Adds a Cheerio to the school
+     * @param b the Cheerio to add
+     */
     public void addCheerio(Cheerio b){
         cheerios.add(b);
     }
 
+    /**
+     * Adds a Jock to the school
+     * @param b the Jock to add
+     */
     public void addJock(Jock b){
         jocks.add(b);
     }
 
+    /**
+     * Adds a Normie to the school
+     * @param b the Normie to add
+     */
     public void addNormie(Normie b){
         normies.add(b);
     }
 
+    /**
+     * Adds an Adult to the school
+     * @param b the Adult to add
+     */
     public void addAdult(Adult b){
         adults.add(b);
     }
 
+    /**
+     * Creates a school roster
+     */
     public static void main(){
         McKinleyHigh roster = new McKinleyHigh();
         roster.addCheerio(new Cheerio("Santana", "Lopez", 6, true));
@@ -61,14 +80,5 @@ public class McKinleyHigh {
         roster.addJock(new Jock("Jock", "3", 4, false));
         roster.addJock(new Jock("Jock", "4", 4, false));
         roster.addJock(new Jock("Jock", "5", 4, false));
-       // if (Main.group.equals("a")){
-            //roster.addCheerio(new Cheerio(Main.firstName, Main.lastName, 2, true));
-       // }
-       // if (Main.group.equals("b")){
-            //roster.addJock(new Jock(Main.firstName, Main.lastName, 4, true));
-       // }
-      //  if (Main.group.equals("c")){
-            //roster.addNormie(new Normie(Main.firstName, Main.lastName, 5, true));
-       // }
     }
 }

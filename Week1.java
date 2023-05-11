@@ -1,22 +1,29 @@
 import java.util.Scanner;
 
 public class Week1 {
-
-    
+    /**  When is the user finished reading */
     static String finishedReading;
+    /**  User input */
     static Scanner keyboard;
+    /** The first choice you make */
     static String week1Choice1;
+    /** The second choice you make */
     static String week1Choice2;
+    /** The third choice you make */
     static String week1Choice3;
+    /**  Makes text appear blue */
     public static final String blue = "\u001B[34m";
+    /**  Makes text appear red */
     public static final String red = "\u001B[31m";
+    /**  Makes text appear green */
     public static final String green = "\u001B[32m";
+    /**  Makes text reset to normal */
     public static final String reset = "\u001B[0m";
 
-    public Week1(Scanner keyboard){
-        keyboard = new Scanner(System.in);
-    }
-
+    /** 
+ 	 *  The first choice you make
+	 * @throws InterruptedException
+ 	 */
     public static void choice1() throws InterruptedException{
         keyboard = new Scanner(System.in);
         System.out.println("""
@@ -67,6 +74,10 @@ public class Week1 {
         choice2();
     }
 
+    /** 
+ 	 *  The second choice you make
+	 * @throws InterruptedException
+ 	 */
     public static void choice2() throws InterruptedException{
         System.out.println("\n\nYou walk back into the hallway, with a sense of dread that you need to make another choice.");
         System.out.print("a. Talk with Glee Club\nb. Sing a song\n> ");
@@ -88,6 +99,10 @@ public class Week1 {
         choice3();
     }
 
+    /** 
+ 	 *  The third choice you make
+	 * @throws InterruptedException
+ 	 */
     public static void choice3() throws InterruptedException{
         System.out.println("\n\nYou have so much energy for some reason. Time to get stuff done!");
         System.out.print("a. Talk with Glee Club\nb. Sing a song\n> ");

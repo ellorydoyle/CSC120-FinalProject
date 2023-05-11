@@ -4,37 +4,60 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-
+    /**  What is the first name of the player? */
     static String firstName;
+    /**  What is the last name of the player? */
     static String lastName;
+    /**  What is the full name of the player? */
     static String fullName;
+    /**  What is group of the player? */
     static String group;
+    /**  How much does the player want the gleeClub to win? */
     static int wantToWin;
-    static String playedBefore;
+    /**  When is the user finished reading */
     static String finishedReading;
+    /**  How does the user respond to Sue */
     static String sueAnswer;
+    /**  How does the user respond to the jock */
     static String jockAnswer;
+    /**  How does the user respond to Emma(doesn't matter) */
     static String nullAnswer;
-    static Random random;
+    /**  User input */
     static Scanner keyboard;
+    /**  How likely is the gleeClub to win sectionals? */
     static int gleeOutcome;
+    /**  Makes text appear blue */
     public static final String blue = "\u001B[34m";
+    /**  Makes text appear red */
     public static final String red = "\u001B[31m";
+    /**  Makes text appear green */
     public static final String green = "\u001B[32m";
+    /**  Makes text reset to normal */
     public static final String reset = "\u001B[0m";
 
-
-    public Main(String firstName, String lastName, String fullName, String group, int wantToWin, String playedBefore, Scanner keyboard){
-        keyboard = new Scanner(System.in);
+    /** 
+  	 *  Constructor for Main
+     *  @param firstName The first name of the player
+     *  @param lastName The last name of the player
+     *  @param fullName The full name of the player
+     *  @param group The chosen group of the player
+     *  @param wantToWin The desire of the player for the glee club to win
+     *  @param gleeClub If the Jock is affiliated with the glee club
+ 	 */
+    public Main(String firstName, String lastName, String fullName, String group, int wantToWin, Scanner keyboard){
         Main.firstName = firstName;
         Main.lastName = lastName;
         Main.fullName = firstName + " " + lastName;
         Main.group = group;
         Main.wantToWin = wantToWin;
-        Main.gleeOutcome = gleeOutcome;
-        Main.playedBefore = playedBefore;
+        Main.gleeOutcome = 0;
     }
 
+    /** 
+  	 *  main
+     *  @param args
+     * @throws InterruptedException
+ 	 */
     public static void main(String[] args) throws InterruptedException{
         System.out.println(reset);
         System.out.print("\033[H\033[2J");
@@ -42,7 +65,12 @@ public class Main {
         Main.introduction();
     }
 
+    /** 
+  	 *  Introduction, user inputs data
+     * @throws InterruptedException
+ 	 */
     public static void introduction () throws InterruptedException{
+        keyboard = new Scanner(System.in);
         System.out.print("\033[H\033[2J");
         System.out.flush();
         Thread.sleep(1000);
@@ -89,6 +117,10 @@ public class Main {
         Main.firstTime();
     }
 
+    /** 
+  	 *  Intro gameplay begins, who you interact with depends on your group
+     * @throws InterruptedException
+ 	 */
     public static void firstTime() throws InterruptedException{
         System.out.println("\n\n[Beginning of First Day]\n");
         Thread.sleep(1000);
@@ -248,6 +280,10 @@ public class Main {
         }
     }
 
+    /** 
+  	 *  Intro to glee club
+     * @throws InterruptedException
+ 	 */
     public static void gleeClubIntro() throws InterruptedException{
         System.out.println("\n\n[At Glee Club]\n");
         Thread.sleep(1000);
@@ -270,7 +306,6 @@ public class Main {
         System.out.println(firstName.toUpperCase() + ": Wait, do I even know how to sing?");
         System.out.println("[ONCE DONE READING, PRESS ENTER]");
         finishedReading = keyboard.nextLine();
-        gleeOutcome = 10;
         Week1.choice1();
     }
 
